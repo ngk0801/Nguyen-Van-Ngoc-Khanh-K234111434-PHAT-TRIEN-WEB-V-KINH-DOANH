@@ -1,0 +1,27 @@
+thead,tfoot {
+    background-color: rgb(79, 131, 189);
+    color:aliceblue;
+}
+tbody tr:nth-child(2n+1) {
+    background-color: whitesmoke;
+}
+tbody tr:nth-child(2n) {
+    background-color: rgba(163, 190, 216, 0.621);
+}
+tbody tr:hover {
+    background-color: rgba(210, 149, 56, 0.423);
+    cursor: pointer;
+}
+thead {
+    font-weight: bold;
+}
+table,tr,th,td {
+            border: 0.5px;
+            border-style: Solid;
+            border-color: rgb(0, 0, 0);
+            border-collapse: collapse; 
+            padding:3px 7px 2px 7px; 
+        }
+table{
+    width: 100%;
+}
