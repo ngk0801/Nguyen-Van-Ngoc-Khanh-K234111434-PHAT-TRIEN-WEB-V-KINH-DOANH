@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>Nguyen Van Ngoc Khanh</title>
+    <style>
+        body{
+            background-color: rgb(135, 255, 255);
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .container {
+            border: 4px solid blue;
+            background: #ccffff;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 650px;
+        }
+        h2 {
+            color: red;
+            border-bottom: 2px solid gray;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+    </style>
+    <script>
+        function submitform()
+        {
+            alert("Form submitted!");
+        }
+        function reset()
+        {
+            document.getElementById("frm_travel_expense").reset();
+        }
+    </script>
+</head>
+<body>
+    <img src="../ex50/DeLong.jpg" style="display: block; margin: auto;">
+        <div class="container">
+        <h2>Travel Expense Report</h2>
+    <form name="frm_travel_expense" id="frm_travel_expense">
+        <label for="firstname">1)First Name: </label>
+        <input type="text" id="firstname" name="firstname"/>
+        <label for="lastname">Last Name: </label>
+        <input type="text" id="lastname" name="lastname"/>
+        <p/>
+        <label for="number">2)Social Security Number: </label>
+        <input type="number" id="number" name="number"/>
+        <p/>
+        <p>3)Department
+            <select name="Department" id="department">
+                    <option value="1">Accounting</option>
+                    <option value="2">Da Nang</option>
+                    <option value ="3">TP.HCM</option>
+            </select>
+        <p/>
+        <p>4)Describe the purpose of your trip</p>
+            <input type="text" style="width: 95%;height: 100px;">
+        <p/>
+        <p>5)Itemize your travel expenses</p>
+            <table style="border-width: 2px;">
+                <tr style="font-weight: bold;">
+                    <td>Date</td>
+                    <td>Description</td>
+                    <td>Category</td>
+                    <td>Amount</td>
+                </tr>
+                <tr >
+                    <td><input type="text" placeholder="mm/dd/yy" style="width: 100px;"></td>
+                    <td><label for="description">
+                        <input type="text" id="description" name="description"/> </label></td>
+                    <td>
+                        <select name="Category" id="category">
+                            <option value="1">Meal</option>
+                        </select>
+                    </td>
+                    <td><label for="amount">
+                        <input type="number" id="amount" name="amount"/> </label></td>
+                </tr>
+                <tr >
+                    <td><input type="text" placeholder="mm/dd/yy" style="width: 100px;"></td>
+                    <td><label for="description">
+                        <input type="text" id="description" name="description"/> </label></td>
+                    <td>
+                        <select name="Category" id="category">
+                            <option value="1">Meal</option>
+                        </select>
+                    </td>
+                    <td><label for="amount">
+                        <input type="number" id="amount" name="amount"/> </label></td>
+                </tr>
+                <tr >
+                    <td><input type="text" placeholder="mm/dd/yy" style="width: 100px;"></td>
+                    <td><label for="description">
+                        <input type="text" id="description" name="description"/> </label></td>
+                    <td>
+                        <select name="Category" id="category">
+                            <option value="1">Meal</option>
+                        </select>
+                    </td>
+                    <td><label for="amount">
+                        <input type="number" id="amount" name="amount"/> </label></td>
+                </tr>
+                <tr >
+                    <td><input type="text" placeholder="mm/dd/yy" style="width: 100px;"></td>
+                    <td><label for="description">
+                        <input type="text" id="description" name="description"/> </label></td>
+                    <td>
+                        <select name="Category" id="category">
+                            <option value="1">Meal</option>
+                        </select>
+                    </td>
+                    <td><label for="amount">
+                        <input type="number" id="amount" name="amount"/> </label></td>
+                </tr>
+             </table>
+             <p>6)Have you submitted your receipts 
+                <input type="radio" name="submit" id="yes">
+                <label for="yes">Yes</label>
+                <input type="radio" name="submit" id="no">
+                <label for="no">No</label>
+            </p>
+            <p>
+                <button type="button" onclick="submitform()">Submit travel expense</button>
+                <button type="button" onclick="reset()">Reset</button>
+            </p>
+            <p>
+                Questions? Google is free
+            </p>
+
+            </table>
+        </fieldset>
+    </form>
+        <p><strong></p>
+    </form>
+    </div>
+</body>
+</html>
