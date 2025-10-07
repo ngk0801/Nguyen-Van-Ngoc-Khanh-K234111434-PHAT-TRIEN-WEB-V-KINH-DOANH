@@ -1,0 +1,81 @@
+<html>
+<head>
+    <title>Nguyen Van Ngoc Khanh</title>
+    <style>
+        body{
+            background-color: rgb(10, 121, 121);
+            font-family: 'Times New Roman', Times, serif;
+            color: aliceblue;}
+        .container {
+            border: 4px solid blue;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 650px;
+            font-size: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid gray;
+            padding-bottom: 8px;
+            margin-top: 0;
+        }
+    </style>
+    <script>
+        function register()
+        {
+            alert("Newborn Registered")
+        }
+        function cancel()
+        {
+        if (confirm("Are you sure you want to cancel?")) {
+        document.getElementById("frm_newborn").reset();
+        }
+        }
+
+    </script>
+</head>
+    <body>
+    <img src="../ex51/Logo.gif" style="display: block; margin: auto;">
+      <div class="container">
+        <h2>Newborn Registration</h2>
+        <form name="frm_newborn" id="frm_newborn">
+        <p>
+            <label for="firstname">1) Infant's First Name: </label>
+            <input type="text" id="firstname" name="firstname"/>
+            <label for="lastname">Last: </label>
+            <input type="text" id="lastname" name="lastname"/>
+        </p>
+        <label for="number">2) Medical Record: </label>
+        <input type="number" id="number" name="number"/>
+        <p>3) Date of birth<label for="birth"> <input type="number" id="birth" name="birth"/> </label></td></p>
+        <p>4) Birth weight:<label for="weight"> <input type="number" id="weight" name="weight"/> </label></td></p>
+        <p>5) APGAR score:<label for="score"> <input type="number" id="score" name="score"/> </label></td></p>
+        <p> 
+         <label for="firstname">6) Mother's First Name: </label>
+            <input type="text" id="firstname" name="firstname"/>
+        <label for="lastname">Last: </label>
+            <input type="text" id="lastname" name="lastname"/>   
+        </p>
+        <p> 
+         <label for="firstname">7) Father's First Name: </label>
+            <input type="text" id="firstname" name="firstname"/>
+        <label for="lastname">Last: </label>
+            <input type="text" id="lastname" name="lastname"/>   
+        </p>
+        <p>Physician (check all that apply)
+            <select name="physician" id="physician">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value ="3">3</option>
+            </select>
+        </p>
+        <p>
+            <button type="button" onclick="register()">Register</button>
+            <button type="button" onclick="cancel()">Cancel</button>
+        </p>
+        
+        </form>
+    
+    </body>
+</div>
+
+</html>
