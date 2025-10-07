@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Tieu de trang</title>
+        <script>
+            function show_hide_image(value)
+            {
+                //1. get image elememt
+                img_cccd=document.getElementById("cccd123")
+                //2.hide img
+                img_cccd.style="display:" +value
+            }
+        </script>
+    </head>
+    <body>
+        <form name="myform">
+            <input type="radio" name="myimage" id="img1" onchange="show_hide_image('block')"/>
+            <label for ="img1">Show Image</label>
+            <br/>
+            <input type="radio" name="myimage" id="img2" onchange='show_hide_image("none")'/>
+            <label for ="img2">Hide Image</label>
+            <br/>
+            <img src="../learn css/images/Can cuoc.webp" id="cccd123" name="cccd123"
+                style="display:block;"
+            />
+        </form>
+    </body>
+</html>

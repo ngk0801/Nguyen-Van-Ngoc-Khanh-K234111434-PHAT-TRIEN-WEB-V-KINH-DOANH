@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Tieu de trang</title>
+        <script>
+            function change_color(value)
+            {
+                mydiv=document.getElementById("mydiv")
+                mydiv.setAttribute("style","width:100 ;height: 50px; background-color:"+value)
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <select name="color" id="color" onchange="change_color(this.value)">
+                <option value="blue">Xanh lè</option>
+                <option value="yellow">Vàng khè</option>
+                <option value="đỏ">Đỏ chét</option>
+
+            </select>
+            <div style="width: 100%; height:50px;background-color: pink;"id="mydiv">
+
+            </div>
+            <select name="author" id="author">
+                <option value="LVB1.jpg">ông A</option>
+            </select>
+        </form>
+    </body>
