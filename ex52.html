@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title>Nguyen Van Ngoc Khanh</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+        }
+        .container {
+            width: 60%;
+            margin: 40px auto;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: white;
+            padding: 20px 40px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        td {
+            padding: 8px;
+            vertical-align: top;
+        }
+        label {
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        .btn-send {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        .btn-send:hover {
+            background-color: darkred;
+        }
+        .btn-row {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Contact the Editorial Office</h2>
+        <form name="my_form" id="my_form">
+            <table>
+                <tr>
+                    <td colspan="2"><label for="fullname">Full Name:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="fullname" id="fullname"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email:</label></td>
+                    <td><label for="send_to">Send to:</label></td>
+                </tr>
+                <tr>
+                    <td><input type="email" name="email" id="email"></td>
+                    <td>
+                        <select name="send_to" id="send_to">
+                            <option value="Editorial board">Editorial board</option>
+                            <option value="News Department">News Department</option>
+                            <option value="Board of Perspectives">Board of Perspectives</option>
+                            <option value="World Board">World Board</option>
+                            <option value="Business Department">Business Department</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><label for="title">Title:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input type="text" name="title" id="title"></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2"><label for="content">Content:</label></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><textarea name="content" id="content" rows="5"></textarea></td>
+                </tr>
+
+                <tr>
+                    <td colspan="2" class="btn-row">
+                        <button type="submit" class="btn-send">Send</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>
