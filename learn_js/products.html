@@ -1,0 +1,56 @@
+<html>
+    <title>nguyen van ngoc khanh</title>
+    <script type="text/javascript">
+      var p_item = {
+        ID: "P01",
+        Name: "Coca",
+        Quantity: 15,
+        Price: 35,
+        TotalValue: function () {
+          return this.Quantity * this.Price;
+        },
+        Image: "images/cocacola.jpg"
+      };
+    </script>
+  </head>
+
+  <body>
+    <table border="1">
+      <tr>
+        <td>ID</td>
+        <td id="td_id"></td>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td id="td_name"></td>
+      </tr>
+      <tr>
+        <td>Quantity</td>
+        <td id="td_quantity"></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td id="td_price"></td>
+      </tr>
+      <tr>
+        <td>Total Value</td>
+        <td id="td_value"></td>
+      </tr>
+      <tr>
+        <td>Images:</td>
+        <td>
+          <img id="img_product" width="150" />
+        </td>
+      </tr>
+    </table>
+
+    <script type="text/javascript">
+      td_id.innerText = p_item.ID;
+      td_name.innerText = p_item.Name;
+      td_quantity.innerText = p_item.Quantity;
+      td_price.innerText = p_item.Price;
+      td_value.innerText = p_item.TotalValue();
+      img_product.src = p_item.Image;
+    </script>
+  </body>
+</html>
