@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Giỏ hàng - Fusion Tea</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="main-title">🧋 Giỏ Hàng</h1>
+      <p class="subtitle">Quản lý sản phẩm và nhập thông tin giao hàng</p>
+    </div>
+
+    <div class="cart-container">
+      <section class="cart-section">
+        <h2 class="section-title">🛒 Sản phẩm</h2>
+        <div id="cartItems"></div>
+        <div id="emptyCart" class="empty-cart-message" style="display:none">
+          <h3>Giỏ hàng trống</h3>
+          <p>Chưa có sản phẩm nào trong giỏ hàng.</p>
+        </div>
+        <div class="cart-actions">
+          <button id="clearCartBtn" class="btn-secondary">🗑 Xóa giỏ hàng</button>
+        </div>
+      </section>
+
+      <section class="options-section">
+        <h2 class="section-title">✨ Tùy chọn</h2>
+        <div class="engraving">
+          <input id="engraveNameInput" placeholder="Nhập tên cần khắc" />
+          <button id="addEngravingBtn" class="btn-primary">Thêm khắc tên</button>
+          <div id="engravingDisplay" class="engraving-display" style="display:none">
+            <span>Khắc: <strong id="engravedName"></strong></span>
+            <button id="removeEngravingBtn" class="btn-link">Xóa</button>
+          </div>
+        </div>
+
+        <div class="coupon">
+          <input id="couponInput" placeholder="Nhập mã giảm giá" />
+          <button id="applyCouponBtn" class="btn-primary">Áp dụng</button>
+          <div id="couponMessage" class="coupon-message hidden"></div>
+        </div>
+      </section>
+
+      <section class="shipping-section">
+        <h2 class="section-title">📍 Thông tin giao hàng</h2>
+        <div class="form-grid">
+          <input id="fullname" placeholder="Họ và tên" />
+          <input id="phone" placeholder="Số điện thoại" />
+          <select id="province"></select>
+          <select id="district" disabled></select>
+          <input id="address" placeholder="Địa chỉ chi tiết" />
+        </div>
+      </section>
+
+      <section class="summary-section">
+        <h2 class="section-title">💰 Tổng kết</h2>
+        <div class="summary-body">
+          <div class="summary-row"><span>Tạm tính:</span><span id="subtotal">0đ</span></div>
+          <div class="summary-row" id="engravingFeeRow" style="display:none"><span>Phí khắc tên:</span><span id="engravingFee">0đ</span></div>
+          <div class="summary-row"><span>Phí vận chuyển:</span><span id="shippingFee">0đ</span></div>
+          <div class="summary-row" id="discountRow" style="display:none"><span>Giảm giá:</span><span id="discount">-0đ</span></div>
+          <hr class="summary-divider" />
+          <div class="summary-row total"><span>Tổng cộng:</span><span id="total">0đ</span></div>
+        </div>
+
+        <div class="shipping-progress">
+          <span>🚚 Tiến trình miễn phí ship</span>
+          <div class="progress-bar-bg"><div id="progressBar" class="progress-bar-fill"></div></div>
+          <div id="progressText" class="progress-text">Thêm 0đ để được miễn phí ship</div>
+        </div>
+
+        <button id="checkoutBtn" class="checkout-btn">✅ Tiến hành thanh toán</button>
+      </section>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+</body>
+</html>
