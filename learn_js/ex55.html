@@ -1,0 +1,82 @@
+<html>
+<head>
+    <title>Nguyen van ngoc khanh</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            margin: 20px 0;
+            background-color: "#f0f0f0";
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: "#d0e0c0";
+        }
+        button {
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+        .result {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th colspan="2">The quadratic equation</th></tr>
+        <tr><td>a:</td><td><input type="number" id="a"></td></tr>
+        <tr><td>b:</td><td><input type="number" id="b"></td></tr>
+        <tr><td>c:</td><td><input type="number" id="c"></td></tr>
+        <tr><td>Result:</td><td id="result" class="result"></td></tr>
+        <tr><td colspan="2">
+            <button onclick="findSolution()">Find solution</button>
+            <button onclick="clearFields()">Clear</button>
+        </td></tr>
+    </table>
+
+    <script>
+        function findSolution() {
+            const a = parseFloat(document.getElementById("a").value);
+            const b = parseFloat(document.getElementById("b").value);
+            const c = parseFloat(document.getElementById("c").value);
+
+            if (isNaN(a) || isNaN(b) || isNaN(c)) {
+                document.getElementById("result").textContent = "Please enter valid numbers for a, b, and c";
+                return;
+            }
+
+            if (a === 0) {
+                document.getElementById("result").textContent = "Not a quadratic equation (a cannot be 0)";
+                return;
+            }
+
+            const delta = b * b - 4 * a * c;
+            let resultText = "";
+
+            if (delta > 0) {
+                const x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                const x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                resultText = "x1=" + x1.toFixed(2) + " ; x2=" + x2.toFixed(2);
+            } else if (delta === 0) {
+                const x = -b / (2 * a);
+                resultText = "x1=x2=" + x.toFixed(2);
+            } else {
+                resultText = "No real solutions";
+            }
+
+            document.getElementById("result").textContent = resultText;
+        }
+
+        function clearFields() {
+            document.getElementById("a").value = "";
+            document.getElementById("b").value = "";
+            document.getElementById("c").value = "";
+            document.getElementById("result").textContent = "";
+        }
+    </script>
+</body>
+</html>

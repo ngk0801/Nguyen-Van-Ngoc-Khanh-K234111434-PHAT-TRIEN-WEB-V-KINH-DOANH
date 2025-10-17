@@ -1,0 +1,68 @@
+<html>
+<head>
+    <title>Nguyen van ngoc khanh</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 300px;
+            margin: 20px 0;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        button {
+            margin: 0 2px;
+            padding: 2px 5px;
+        }
+    </style>
+</head>
+<body>
+    <table id="calcTable">
+        <tr><td>a:</td><td><input type="number" id="a"></td></tr>
+        <tr><td>b:</td><td><input type="number" id="b"></td></tr>
+        <tr><td>c:</td><td><input type="number" id="c"></td></tr>
+        <tr><td>Result:</td><td id="result">0</td></tr>
+        <tr><td colspan="2">
+            <button onclick="calculateMax()">MAX</button>
+            <button onclick="calculateMin()">MIN</button>
+            <button onclick="calculateSin()">sin(a)</button>
+            <button onclick="calculateCos()">cos(a)</button>
+            <button onclick="calculatePower()">a^b</button>
+        </td></tr>
+    </table>
+
+    <script>
+        function calculateMax() {
+            const a = parseFloat(document.getElementById('a').value) || 0;
+            const b = parseFloat(document.getElementById('b').value) || 0;
+            const c = parseFloat(document.getElementById('c').value) || 0;
+            document.getElementById('result').textContent = Math.max(a, b, c);
+        }
+
+        function calculateMin() {
+            const a = parseFloat(document.getElementById('a').value) || 0;
+            const b = parseFloat(document.getElementById('b').value) || 0;
+            const c = parseFloat(document.getElementById('c').value) || 0;
+            document.getElementById('result').textContent = Math.min(a, b, c);
+        }
+
+        function calculateSin() {
+            const a = parseFloat(document.getElementById('a').value) || 0;
+            document.getElementById('result').textContent = (Math.sin(a * Math.PI / 180) || 0).toFixed(10);
+        }
+
+        function calculateCos() {
+            const a = parseFloat(document.getElementById('a').value) || 0;
+            document.getElementById('result').textContent = (Math.cos(a * Math.PI / 180) || 0).toFixed(10);
+        }
+
+        function calculatePower() {
+            const a = parseFloat(document.getElementById('a').value) || 0;
+            const b = parseFloat(document.getElementById('b').value) || 0;
+            document.getElementById('result').textContent = (Math.pow(a, b) || 0).toFixed(10);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>Nguyen van ngoc khanh</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 400px;
+            margin: 20px 0;
+            background-color: #f0f0f0;
+        }
+        td, th {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #d0e0c0;
+        }
+        textarea {
+            width: 100%;
+            height: 50px;
+            resize: none;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 0 5px;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr><th colspan="2">Using String Processing functions</th></tr>
+        <tr>
+            <td>Input Data:</td>
+            <td><textarea id="inputData"></textarea></td>
+        </tr>
+        <tr>
+            <td>Result:</td>
+            <td><textarea id="result" readonly></textarea></td>
+        </tr>
+        <tr><td colspan="2">W3C's String Processing Website</td></tr>
+        <tr>
+            <td>Enter Data</td>
+            <td><button onclick="enterData()">Enter Data</button></td>
+        </tr>
+        <tr>
+            <td>Uppercase display</td>
+            <td><button onclick="uppercaseDisplay()">Uppercase display</button></td>
+        </tr>
+        <tr>
+            <td>Count the number of uppercase characters</td>
+            <td><button onclick="countUppercase()">Count number of uppercase characters</button></td>
+        </tr>
+        <tr>
+            <td>lowercase display</td>
+            <td><button onclick="lowercaseDisplay()">Output one word per line</button></td>
+        </tr>
+        <tr>
+            <td>Count the number of lowercase characters</td>
+            <td><button onclick="countLowercase()">Word count</button></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="countVowelsConsonants()">print vowels, consonants</button></td>
+        </tr>
+    </table>
+
+    <script>
+        function enterData() {
+            const input = document.getElementById("inputData").value;
+            document.getElementById("result").value = input;
+        }
+
+        function uppercaseDisplay() {
+            const input = document.getElementById("inputData").value;
+            document.getElementById("result").value = input.toUpperCase();
+        }
+
+        function countUppercase() {
+            const input = document.getElementById("inputData").value;
+            const uppercaseCount = (input.match(/[A-Z]/g) || []).length;
+            document.getElementById("result").value = uppercaseCount;
+        }
+
+        function lowercaseDisplay() {
+            const input = document.getElementById("inputData").value;
+            const words = input.split(/\s+/).filter(word => word.length > 0);
+            document.getElementById("result").value = words.join("\n");
+        }
+
+        function countLowercase() {
+            const input = document.getElementById("inputData").value;
+            const wordCount = input.split(/\s+/).filter(word => word.length > 0).length;
+            document.getElementById("result").value = wordCount;
+        }
+
+        function countVowelsConsonants() {
+            const input = document.getElementById("inputData").value.toLowerCase();
+            const vowels = (input.match(/[aeiou]/g) || []).length;
+            const consonants = (input.match(/[bcdfghjklmnpqrstvwxyz]/g) || []).length;
+            document.getElementById("result").value = `Vowels: ${vowels}, Consonants: ${consonants}`;
+        }
+    </script>
+</body>
+</html>
