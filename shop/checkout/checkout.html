@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thanh toán - Fusion Tea</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1 class="main-title">🧋 Thanh Toán</h1>
+      <p class="subtitle">Xác nhận đơn hàng của bạn</p>
+    </div>
+
+    <div class="checkout-container">
+      <section class="cart-section">
+        <h2 class="section-title">🛒 Giỏ hàng của bạn</h2>
+        <div id="cartItems"></div>
+        <div id="emptyCart" class="empty-cart-message">
+          <h3>Giỏ hàng trống</h3>
+          <p>Chưa có sản phẩm nào trong giỏ hàng.</p>
+        </div>
+      </section>
+
+      <section class="info-section">
+        <h2 class="section-title">📍 Thông tin giao hàng</h2>
+        <div id="shippingDisplay" class="shipping-display">
+          <p><strong>Họ và tên:</strong> <span id="displayFullname"></span></p>
+          <p><strong>Số điện thoại:</strong> <span id="displayPhone"></span></p>
+          <p><strong>Tỉnh/Thành phố:</strong> <span id="displayProvince"></span></p>
+          <p><strong>Quận/Huyện:</strong> <span id="displayDistrict"></span></p>
+          <p><strong>Địa chỉ chi tiết:</strong> <span id="displayAddress"></span></p>
+        </div>
+        <div id="engravingInfo" class="engraving-display">
+          <p><strong>Khắc tên:</strong> <span id="engravedNameCheckout"></span></p>
+        </div>
+        <div id="noShippingInfo" class="empty-cart-message">
+          <p>Chưa có thông tin giao hàng. <a href="../cart/cart.html">Quay lại giỏ hàng</a> để nhập thông tin.</p>
+        </div>
+      </section>
+
+      <section class="summary-section">
+        <h2 class="section-title">💰 Tổng kết đơn hàng</h2>
+        <div class="summary-body">
+          <div class="summary-row"><span>Tạm tính:</span><span id="subtotal">0đ</span></div>
+          <div class="summary-row"><span>Phí khắc tên:</span><span id="engravingFee">0đ</span></div>
+          <div class="summary-row"><span>Phí vận chuyển:</span><span id="shippingFee">0đ</span></div>
+          <div class="summary-row"><span>Giảm giá:</span><span id="discount">-0đ</span></div>
+          <hr class="summary-divider" />
+          <div class="summary-row total"><span>Tổng cộng:</span><span id="total">0đ</span></div>
+        </div>
+
+        <div class="shipping-progress">
+          <span>🚚 Tiến trình đơn hàng</span>
+          <div class="progress-bar-bg">
+            <div id="progressBar" class="progress-bar-fill"></div>
+          </div>
+          <div class="progress-text" id="progressText">Đang xử lý...</div>
+        </div>
+
+        <h3 class="section-title">💳 Phương thức thanh toán</h3>
+        <div class="payment-methods">
+          <label>
+            <input type="radio" name="payment" value="momo" checked />
+            <span>💗 MoMo</span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="zalopay" />
+            <span>💙 ZaloPay</span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="bank" />
+            <span>🏦 Chuyển khoản ngân hàng</span>
+          </label>
+          <label>
+            <input type="radio" name="payment" value="cod" />
+            <span>📦 Thanh toán khi nhận hàng (COD)</span>
+          </label>
+        </div>
+
+        <button id="confirmOrderBtn" class="checkout-btn">✅ Xác nhận đơn hàng</button>
+      </section>
+    </div>
+  </div>
+
+  <div id="overlay" class="overlay hidden"></div>
+  <div id="successPopup" class="popup hidden">
+    <div class="popup-content">
+      <div class="popup-icon">🎉</div>
+      <h3>Đặt hàng thành công!</h3>
+      <p>Cảm ơn bạn đã mua hàng tại Fusion Tea 💖</p>
+      <p>Mã đơn hàng: <strong id="orderId">#0</strong></p>
+      <button id="closePopupBtn" class="btn-primary">Đóng</button>
+    </div>
+  </div>
+
+  <script src="checkout.js"></script>
+</body>
+</html>
