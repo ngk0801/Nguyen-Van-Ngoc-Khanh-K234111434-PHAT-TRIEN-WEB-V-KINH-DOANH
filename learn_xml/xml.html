@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Title</title>
+    <script type="text/javascript">
+        var txt = "<bookstore><book>"; 
+        txt += "<title>Everyday Italian</title>"; 
+        txt += "<author>Giada De Laurentiis</author>"; 
+        txt += "<year>2005</year>"; 
+        txt += "</book></bookstore>";
+    </script>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td>Title:</td>
+            <td id="td_title"></td>
+        </tr>
+        <tr>
+            <td>Author:</td>
+            <td id="td_author"></td>
+        </tr>
+        <tr>
+            <td>Year:</td>
+            <td id="td_year"></td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        // Chỉ sử dụng DOM khi dữ liệu năm trong nội tại của file
+        // (tức là nó phải được tải xuống file này rồi)
+        var parser=new DOMParser()
+        //tạo tài liệu Xu bằng có pháp:
+        var xmlDoc=parser.parseFromString(txt,"text/xml")
+        //1/nều thành công thì xalbọc là 1 object
+        // chứa toàn bộ các item đã đc mô hình hướng đối tượng
+        title=xmlDoc.getElementsByTagName("title")[0].childNodes[0].nodeValue;
+        author=xmlDoc.getElementsByTagName("author")[0].childNodes[0].nodeValue;
+        year=xmlDoc.getElementsByTagName("year")[0].childNodes[0].nodeValue;
+        td_title.innerText=title
+        td_author.innerText=author
+        td_year.innerText=year
+    </script>
+    </body>
+</html>
