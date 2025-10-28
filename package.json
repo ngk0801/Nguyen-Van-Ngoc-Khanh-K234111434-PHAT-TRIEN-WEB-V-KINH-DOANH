@@ -1,0 +1,26 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ngk0801/Nguyen-Van-Ngoc-Khanh-K234111434-PHAT-TRIEN-WEB-V-KINH-DOANH.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ngk0801/Nguyen-Van-Ngoc-Khanh-K234111434-PHAT-TRIEN-WEB-V-KINH-DOANH/issues"
+  },
+  "homepage": "https://github.com/ngk0801/Nguyen-Van-Ngoc-Khanh-K234111434-PHAT-TRIEN-WEB-V-KINH-DOANH#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0"
+  }
+}
