@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-ba" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiwi Company Website</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="website-container">
+      <header id="part-a">
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#" class="menu-item active" data-content="about-me">About me</a></li>
+            <li class="dropdown">
+              <a href="#">Form & Javascript</a>
+              <ul class="dropdown-content">
+                <li><a href="#" class="menu-item" data-content="books">Books</a></li>
+                <li><a href="#" class="menu-item" data-content="customers">Customers</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+               <a href="#">Style</a>
+               <ul class="dropdown-content">
+                <li><a href="#" class="menu-item" data-content="style-theory">Style Theory</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">API and External</a>
+              <ul class="dropdown-content">
+                <li><a href="#" class="menu-item" data-content="weather-api">Weather API</a></li>
+                <li><a href="#" class="menu-item" data-content="rss">RSS</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <aside id="part-b">
+        <h3>Stock Information</h3>
+        <table id="stock-table">
+            <thead>
+                <tr>
+                    <th>Code</th>
+                    <th>Price</th>
+                    <th>Updated At</th>
+                </tr>
+            </thead>
+            <tbody id="stock-tbody">
+                <!-- Stock data will be loaded here by JavaScript -->
+            </tbody>
+        </table>
+      </aside>
+
+      <main id="part-c">
+        <!-- Q2: Default content is "About me" -->
+        <div id="about-me-content" class="content-panel">
+          <h2>About Me</h2>
+          <div class="student-card">
+            <img src="https://i.pravatar.cc/150?img=12" alt="Student Avatar" class="avatar">
+            <div class="student-info">
+              <p><strong>Student ID:</strong> SE123456</p>
+              <p><strong>Student Name:</strong> Nguyen Van A</p>
+              <p><strong>Class Name:</strong> SE18A</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Q3: Books Content Panel -->
+        <div id="books-content" class="content-panel hidden">
+          <h2>Books from XML</h2>
+          <table id="books-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Book data will be inserted here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
+        
+        <!-- Q4: Customers Content Panel -->
+        <div id="customers-content" class="content-panel hidden">
+          <h2>Customer Management</h2>
+          <div class="customer-form-container">
+            <h3>Add New Customer</h3>
+            <form id="add-customer-form">
+              <div class="form-grid">
+                <input type="text" id="customer-id" placeholder="Customer ID" required>
+                <input type="text" id="customer-name" placeholder="Name" required>
+                <input type="tel" id="customer-phone" placeholder="Phone" required>
+                <input type="email" id="customer-email" placeholder="Email" required>
+                <input type="number" id="customer-age" placeholder="Age" required min="1">
+                <button type="submit">Add Customer</button>
+              </div>
+            </form>
+          </div>
+
+          <hr>
+
+          <h3>Customer List</h3>
+          <table id="customers-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Age</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="customers-tbody">
+              <!-- Customer data will be here -->
+            </tbody>
+          </table>
+        </div>
+
+        <div id="style-theory-content" class="content-panel hidden">
+          <h2>Style Theory</h2>
+          <p>Theory and examples for styles will be presented here.</p>
+        </div>
+
+        <div id="weather-api-content" class="content-panel hidden">
+          <h2>Weather API</h2>
+          <p>Weather information will be shown here.</p>
+        </div>
+        
+        <div id="rss-content" class="content-panel hidden">
+          <h2>RSS</h2>
+          <p>The RSS feed will be shown here.</p>
+        </div>
+      </main>
+
+      <aside id="part-d">
+        <h3>Part D</h3>
+        <p>I declare that all of these solutions are my own and not copied from anyone in this class.</p>
+      </aside>
+
+      <footer id="part-e">
+        <p id="footer-text">Designed by Nguyen Van A, today is...</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

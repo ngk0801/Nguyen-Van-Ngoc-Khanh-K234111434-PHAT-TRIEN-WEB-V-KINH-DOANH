@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiwi Company Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="website-container">
+    <!-- ==================== PART A – Header + Menu ==================== -->
+    <header id="part-a">
+        <nav class="main-nav">
+            <ul>
+                <li><a href="#" class="menu-item active" data-content="about-me">About me</a></li>
+                <li class="dropdown">
+                    <a href="#">Form & Javascript</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#" class="menu-item" data-content="books">Books</a></li>
+                        <li><a href="#" class="menu-item" data-content="customers">Customers</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Style</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#" class="menu-item" data-content="style-theory">Style Theory</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">API and External</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#" class="menu-item" data-content="weather-api">Weather API</a></li>
+                        <li><a href="#" class="menu-item" data-content="rss">RSS</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ==================== PART B – Stock (AJAX) ==================== -->
+    <aside id="part-b">
+        <h3>Stock Information</h3>
+        <button id="loadStockBtn">Load Stock Data</button>
+        <table id="stock-table">
+            <thead>
+                <tr><th>Code</th><th>Price</th><th>Updated At</th></tr>
+            </thead>
+            <tbody id="stock-tbody"></tbody>
+        </table>
+    </aside>
+
+    <!-- ==================== PART C – Main Content ==================== -->
+    <main id="part-c">
+
+        <!-- Q2 – Default (About me) -->
+        <div id="about-me-content" class="content-panel">
+            <h2>About Me</h2>
+            <div class="student-card">
+                <img src="https://i.pravatar.cc/150?img=12" alt="Avatar" class="avatar">
+                <div class="student-info">
+                    <p><strong>Student ID:</strong> <span id="studentId">SE123456</span></p>
+                    <p><strong>Student Name:</strong> <span id="studentName">Nguyen Van A</span></p>
+                    <p><strong>Class Name:</strong> <span id="studentClass">SE18A</span></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Q3 – Books -->
+        <div id="books-content" class="content-panel hidden">
+            <h2>Books from XML</h2>
+            <table id="books-table">
+                <thead><tr><th>ID</th><th>Image</th><th>Name</th><th>Description</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Q4 – Customers -->
+        <div id="customers-content" class="content-panel hidden">
+            <h2>Customers</h2>
+            <form id="customerForm">
+                <label>ID: <input type="number" id="cid" required></label><br>
+                <label>Name: <input type="text" id="cname" required></label><br>
+                <label>Phone: <input type="tel" id="cphone"></label><br>
+                <label>Email: <input type="email" id="cemail"></label><br>
+                <label>Age: <input type="number" id="cage" min="0"></label><br>
+                <button type="submit">Add / Update</button>
+            </form>
+            <table id="custTable">
+                <thead><tr><th>ID</th><th>Name</th><th>Phone</th><th>Email</th><th>Age</th><th>Action</th></tr></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+
+        <!-- Q5 – Style Theory -->
+        <div id="style-theory-content" class="content-panel hidden">
+            <h2>CSS Style Theory</h2>
+            <p><strong>Inline:</strong> <code>&lt;span style="color:red;"&gt;</code></p>
+            <p><strong>Internal:</strong> <code>&lt;style&gt; … &lt;/style&gt;</code> inside <code>&lt;head&gt;</code></p>
+            <p><strong>External:</strong> <code>&lt;link rel="stylesheet" href="style.css"&gt;</code></p>
+        </div>
+
+        <!-- Q6 – Weather API -->
+        <div id="weather-api-content" class="content-panel hidden">
+            <h2>Weather API (OpenWeatherMap)</h2>
+            <input type="text" id="cityInput" placeholder="City name" value="Hanoi">
+            <button id="getWeatherBtn">Get Weather</button>
+            <table id="weatherTable" hidden>
+                <tr><th>City</th><td id="wCity"></td></tr>
+                <tr><th>Temp</th><td id="wTemp"></td></tr>
+                <tr><th>Description</th><td id="wDesc"></td></tr>
+            </table>
+        </div>
+
+        <!-- Q7 – RSS -->
+        <div id="rss-content" class="content-panel hidden">
+            <h2>VnExpress Education RSS</h2>
+            <div id="rssFeed"></div>
+        </div>
+
+    </main>
+
+    <!-- ==================== PART D – Marquee (Q9 - ĐÚNG 100%) ==================== -->
+    <aside id="part-d">
+        <div class="marquee-container">
+            <marquee direction="up" behavior="scroll" scrollamount="3" truespeed>
+                I declare that all of these solutions are my own and not copied from anyone in this class.
+            </marquee>
+        </div>
+    </aside>
+
+    <!-- ==================== PART E – Footer (Q10) ==================== -->
+    <footer id="part-e">
+        <p id="footer-text">Designed by <span id="footerName"></span>, today is <span id="footerDate"></span>.</p>
+    </footer>
+</div>
+
+<script src="scripts.js"></script>
+</body>
+</html>

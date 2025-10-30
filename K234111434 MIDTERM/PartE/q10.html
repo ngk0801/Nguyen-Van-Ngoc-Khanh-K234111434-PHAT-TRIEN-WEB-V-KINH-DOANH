@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Question 10 - Center Text</title>
+  <link rel="stylesheet" href="../PartA/css/Q10.css">
+  <script src="Q10.js" defer></script>
+</head>
+<body>
+  <div id="container">
+    <p id="text">
+      Designed by Student Nguyen Van Ngoc Khanh, today is ...
+    </p>
+  </div>
+
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      const dateOptions = { 
+        weekday: 'long', 
+        year: 'numeric', 
+        month: 'long', 
+        day: 'numeric'
+      };
+      const dateStr = now.toLocaleDateString("en-US", dateOptions);
+      const timeStr = now.toLocaleTimeString("en-US", { hour12: true });
+
+document.getElementById("container").textContent = `Designed by Student Nguyen Van Ngoc Khanh, today is ${dateStr}, ${timeStr}`;
+    }
+
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  </script>
+</body>
+</html>
