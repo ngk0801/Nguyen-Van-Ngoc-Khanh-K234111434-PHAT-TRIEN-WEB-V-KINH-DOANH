@@ -1,0 +1,31 @@
+<p>{{ errMessage }}</p>
+<table border="1" style="width: 100%; border-collapse: collapse;">
+  <thead>
+    <tr style="background-color: #f0f0f0;">
+      <th style="padding: 10px;">Id</th>
+      <th style="padding: 10px;">Style</th>
+      <th style="padding: 10px;">Fashion Subject</th>
+      <th style="padding: 10px;">Fashion Detail</th>
+      <th style="padding: 10px;">Image</th>
+      <th style="padding: 10px;">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fashion of fashions">
+      <td style="padding: 10px;">{{ fashion._id }}</td>
+      <td style="padding: 10px;">{{ fashion.style }}</td>
+      <td style="padding: 10px;">{{ fashion.fashion_subject }}</td>
+      <td style="padding: 10px;">{{ fashion.fashion_detail }}</td>
+      <td style="padding: 10px;">
+        <img *ngIf="fashion.fashion_image" src="{{ fashion.fashion_image }}" width="100px" height="100px"
+          alt="Fashion Image" style="object-fit: cover;">
+        <span *ngIf="!fashion.fashion_image">No Image</span>
+      </td>
+      <td style="padding: 10px;">
+        <button (click)="viewDetail(fashion._id)" style="margin-right: 5px;">View</button>
+        <button (click)="editFashion(fashion._id)" style="margin-right: 5px;">Edit</button>
+        <button (click)="deleteFashion(fashion._id)" style="background-color: #ff4444; color: white;">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

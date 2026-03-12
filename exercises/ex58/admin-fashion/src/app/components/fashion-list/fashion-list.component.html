@@ -1,0 +1,54 @@
+<div class="admin-container">
+  <h2>Fashion Management</h2>
+  
+  <div *ngIf="errMessage" class="alert alert-error">{{ errMessage }}</div>
+  <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+
+  <div class="controls">
+    <button (click)="addNew()" class="btn btn-primary">+ Add New Fashion</button>
+    
+    <div class="filter-group">
+      <label>Filter by Style:</label>
+      <select [(ngModel)]="selectedStyle" (change)="filterByStyle()">
+        <option value="">All Styles</option>
+        <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div *ngIf="showForm" class="form-modal">
+    <app-fashion-form [(fashion)]="currentFashion" (onSave)="saveFashion()" (onCancel)="cancelForm()"></app-fashion-form>
+  </div>
+
+  <table class="fashions-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Style</th>
+        <th>Detail</th>
+        <th>Thumbnail</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fashion of fashions">
+        <td>{{ fashion._id }}</td>
+        <td>{{ fashion.title }}</td>
+        <td>{{ fashion.style }}</td>
+        <td>{{ fashion.detail | slice:0:50 }}...</td>
+        <td>
+          <img *ngIf="fashion.thumbnail" [src]="fashion.thumbnail" class="thumb-img" alt="Thumbnail">
+          <span *ngIf="!fashion.thumbnail">No image</span>
+        </td>
+        <td>{{ fashion.createdDate | date:'short' }}</td>
+        <td class="actions">
+          <button (click)="viewDetail(fashion)" class="btn btn-info">View</button>
+          <button (click)="editFashion(fashion)" class="btn btn-warning">Edit</button>
+          <button (click)="deleteFashion(fashion._id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

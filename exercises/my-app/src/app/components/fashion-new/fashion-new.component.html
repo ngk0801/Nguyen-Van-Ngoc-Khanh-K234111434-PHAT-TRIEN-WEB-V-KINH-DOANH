@@ -1,0 +1,48 @@
+<div class="form-container">
+  <h2>Add New Fashion</h2>
+  
+  <p *ngIf="errMessage" class="error">{{ errMessage }}</p>
+  <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+
+  <form (ngSubmit)="postFashion()">
+    <table class="form-table">
+      <tr>
+        <td><label>Fashion Style:</label></td>
+        <td>
+          <input type="text" class="form-control" name="style" id="style" placeholder="Enter Style"
+            [(ngModel)]="fashion.style" required />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Fashion Subject:</label></td>
+        <td>
+          <input type="text" class="form-control" name="fashion_subject" id="fashion_subject"
+            placeholder="Enter Subject" [(ngModel)]="fashion.fashion_subject" required />
+        </td>
+      </tr>
+      <tr>
+        <td><label>Fashion Detail:</label></td>
+        <td>
+          <textarea class="form-control" name="fashion_detail" id="fashion_detail" placeholder="Enter Detail"
+            [(ngModel)]="fashion.fashion_detail" rows="4" required></textarea>
+        </td>
+      </tr>
+      <tr>
+        <td><label>Fashion Image:</label></td>
+        <td>
+          <input type="file" class="file-input" name="fashion_image" id="fashion_image" accept="image/*"
+            (change)="onFileSelected($event, fashion)" />
+          <div *ngIf="fashion.fashion_image" class="image-preview">
+            <img [src]="fashion.fashion_image" alt="Preview" class="preview-img" />
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="button-group">
+          <button type="submit" class="btn-submit">Submit</button>
+          <button type="button" class="btn-cancel" (click)="goBack()">Cancel</button>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>

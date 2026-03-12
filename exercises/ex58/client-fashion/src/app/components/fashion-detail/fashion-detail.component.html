@@ -1,0 +1,30 @@
+<div class="detail-modal" (click)="$event.stopPropagation()">
+  <button class="close-btn" (click)="close()">×</button>
+  
+  <div *ngIf="fashion" class="detail-content">
+    <div class="detail-left">
+      <img *ngIf="fashion.thumbnail" [src]="fashion.thumbnail" [alt]="fashion.title" class="detail-image">
+      <div *ngIf="!fashion.thumbnail" class="no-image-large">No Image Available</div>
+    </div>
+
+    <div class="detail-right">
+      <h2>{{ fashion.title }}</h2>
+      
+      <div class="detail-meta">
+        <span class="meta-item">
+          <strong>Style:</strong> {{ fashion.style }}
+        </span>
+        <span class="meta-item">
+          <strong>Date:</strong> {{ fashion.createdDate | date:'short' }}
+        </span>
+      </div>
+
+      <div class="detail-section">
+        <h3>Details</h3>
+        <p>{{ fashion.detail }}</p>
+      </div>
+
+      <button class="btn-close" (click)="close()">Close</button>
+    </div>
+  </div>
+</div>

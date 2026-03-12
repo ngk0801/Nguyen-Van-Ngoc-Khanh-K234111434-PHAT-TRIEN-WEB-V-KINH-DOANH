@@ -1,0 +1,37 @@
+<div class="browse-container">
+  <div *ngIf="errMessage" class="alert alert-error">{{ errMessage }}</div>
+
+  <div class="search-section">
+    <h2>Browse Fashion Collections</h2>
+    <div class="search-controls">
+      <label>Filter by Style:</label>
+      <select [(ngModel)]="selectedStyle" (change)="filterByStyle()">
+        <option value="">All Styles</option>
+        <option *ngFor="let style of styles" [value]="style">{{ style }}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="fashion-groups">
+    <div *ngFor="let group of fashionGroups" class="style-group">
+      <h3>{{ group.style }}</h3>
+      <div class="fashion-grid">
+        <div *ngFor="let fashion of group.fashions" class="fashion-card" (click)="viewDetail(fashion)">
+          <div class="fashion-image-wrapper">
+            <img *ngIf="fashion.thumbnail" [src]="fashion.thumbnail" [alt]="fashion.title" class="fashion-image">
+            <div *ngIf="!fashion.thumbnail" class="no-image">No Image</div>
+          </div>
+          <div class="fashion-info">
+            <h4>{{ fashion.title }}</h4>
+            <p>{{ fashion.detail | slice:0:60 }}...</p>
+            <button class="btn-view">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="showDetail && selectedFashion" class="modal-overlay" (click)="closeDetail()">
+    <app-fashion-detail [fashion]="selectedFashion" (onClose)="closeDetail()"></app-fashion-detail>
+  </div>
+</div>

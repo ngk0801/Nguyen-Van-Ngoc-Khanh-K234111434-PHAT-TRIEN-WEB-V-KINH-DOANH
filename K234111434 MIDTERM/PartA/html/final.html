@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiwi Company - K234111434 - BW03</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- A: Header + Menu -->
+    <header class="area-a">
+      <div class="brand">
+        <img src="../../images/kiwi_company.png" alt="Kiwi Company" class="brand-logo">
+      </div>
+
+      <!-- MENU GIỮA -->
+      <nav class="menu dropdown">
+        <ul class="menu-root">
+          <li><a href="#" class="menu-link" data-page="about">About me</a></li>
+          <li class="has-sub">
+            <a href="#" class="menu-title">Form & Javascript</a>
+            <ul class="submenu">
+              <li><a href="#" class="menu-link" data-page="books">Books</a></li>
+              <li><a href="#" class="menu-link" data-page="customers">Customers</a></li>
+            </ul>
+          </li>
+          <li><a href="#" class="menu-link" data-page="style">Style</a></li>
+          <li class="has-sub">
+            <a href="#" class="menu-title">API & External</a>
+            <ul class="submenu">
+              <li><a href="#" class="menu-link" data-page="weather">Weather API</a></li>
+              <li><a href="#" class="menu-link" data-page="rss">RSS</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- B: Left sidebar -->
+    <aside class="area-b">
+      <h3>Khu vực B</h3>
+      <div id="b-dynamic"></div>
+
+      <div class="sidebar-card">
+        <h4>Tóm tắt</h4>
+        <ul>
+          <li>Default: About me</li>
+          <li>Form & JS: Books, Customers</li>
+          <li>API & External: Weather, RSS</li>
+        </ul>
+      </div>
+
+      <div class="sidebar-card">
+        <h4>Liên kết nhanh</h4>
+        <div class="quick-links">
+          <a class="menu-link" data-page="about" href="#">About me</a>
+          <a class="menu-link" data-page="books" href="#">Books</a>
+          <a class="menu-link" data-page="customers" href="#">Customers</a>
+          <a class="menu-link" data-page="weather" href="#">Weather API</a>
+          <a class="menu-link" data-page="rss" href="#">RSS</a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- C: Main content -->
+    <main id="content-area" class="area-c">
+      <!-- Nội dung render bằng JS -->
+    </main>
+
+    <!-- D: Right sidebar -->
+    <aside class="area-d">
+      <h3>Khu vực D</h3>
+      <div class="sidebar-card">
+        <h4>Thông tin nhanh</h4>
+        <div class="info">
+          <div><b>Tên SV:</b> Nguyễn Vân Ngọc Khánh</div>
+          <div><b>MSSV:</b> K234111434</div>
+          <div><b>Đề:</b> BW03</div>
+          <div><b>Thiết kế:</b> A - B - C - D - E</div>
+        </div>
+      </div>
+
+      <div style="margin-top:12px;">
+        <marquee direction="up" scrollamount="3" height="80">
+          I declare that all of these solutions are my own.<br>
+          <b>Nguyễn Vân Ngọc Khánh - K234111434</b>
+        </marquee>
+      </div>
+    </aside>
+
+    <!-- E: Footer -->
+    <footer class="area-e">
+      <span id="footer-text">&copy; 2025 Kiwi Company Demo</span>
+    </footer>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<div class="detail-container">
+  <button (click)="goBack()" class="back-btn">← Back</button>
+  
+  <p *ngIf="errMessage" class="error">{{ errMessage }}</p>
+  
+  <div *ngIf="fashion" class="fashion-detail">
+    <h2>{{ fashion.fashion_subject }}</h2>
+    
+    <div class="detail-grid">
+      <div class="detail-item">
+        <label>ID:</label>
+        <span>{{ fashion._id }}</span>
+      </div>
+      
+      <div class="detail-item">
+        <label>Style:</label>
+        <span>{{ fashion.style }}</span>
+      </div>
+      
+      <div class="detail-item">
+        <label>Subject:</label>
+        <span>{{ fashion.fashion_subject }}</span>
+      </div>
+      
+      <div class="detail-item">
+        <label>Detail:</label>
+        <span>{{ fashion.fashion_detail }}</span>
+      </div>
+    </div>
+    
+    <div class="image-container">
+      <label>Image:</label>
+      <img *ngIf="fashion.fashion_image" src="{{ fashion.fashion_image }}" alt="Fashion Image" class="detail-image">
+      <span *ngIf="!fashion.fashion_image">No image available</span>
+    </div>
+  </div>
+</div>

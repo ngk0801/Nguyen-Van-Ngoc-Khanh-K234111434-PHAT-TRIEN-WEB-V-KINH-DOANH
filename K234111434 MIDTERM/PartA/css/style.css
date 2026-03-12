@@ -1,0 +1,134 @@
+:root {
+  --pink-light: #fff0f5;
+  --pink-soft: #f9c6cf;
+  --pink-main: #e6a6b0;
+  --brown: #6b4c3b;
+  --border: #f2d1d6;
+}
+
+/* ========== Layout ========== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  background-color: var(--pink-light);
+  color: var(--brown);
+}
+.layout {
+  display: grid;
+  grid-template-areas:
+    "a a a"
+    "b c d"
+    "e e e";
+  grid-template-columns: 240px 1fr 240px;
+  grid-template-rows: 90px auto 60px;
+  min-height: 100vh;
+}
+.area-a { grid-area: a; }
+.area-b { grid-area: b; background: #fff; padding: 12px; border-right: 1px solid var(--border); }
+.area-c { grid-area: c; padding: 16px; background: #fffafc; }
+.area-d { grid-area: d; background: #fff; padding: 12px; border-left: 1px solid var(--border); }
+.area-e { grid-area: e; background: var(--pink-main); color: white; display: flex; align-items: center; padding-left: 12px; }
+
+/* ========== Header + Menu Center ========== */
+.area-a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #fff9fb, #ffe4ec);
+  border-bottom: 2px solid var(--border);
+  position: relative;
+}
+
+.brand {
+  position: absolute;
+  left: 16px;
+}
+.brand-logo {
+  height: 50px;
+  object-fit: contain;
+}
+
+.menu-root {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+.menu-link,
+.menu-title {
+  text-decoration: none;
+  background: #fff;
+  color: var(--brown);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: 0.2s;
+}
+.menu-link:hover,
+.menu-title:hover {
+  background: var(--pink-soft);
+  color: #fff;
+}
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px;
+  list-style: none;
+}
+.has-sub:hover .submenu { display: block; }
+
+/* ========== Sidebar Cards ========== */
+.sidebar-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+}
+.sidebar-card h4 {
+  margin: 0 0 6px 0;
+  color: var(--pink-main);
+}
+
+/* ========== Quick Links (B) ========== */
+.quick-links {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.quick-links a {
+  text-decoration: none;
+  background: #fff9fa;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--brown);
+  transition: 0.2s;
+}
+.quick-links a:hover {
+  background: var(--pink-soft);
+  color: white;
+}
+
+/* ========== Info, Badge ========== */
+.info { font-size: 14px; line-height: 1.6; }
+.badge {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.badge.success { background: #fde2e7; color: var(--brown); border: 1px solid var(--pink-main); }
+.badge.warn { background: #fff7e5; color: #a65e00; border: 1px solid #f2cc8f; }
+
+/* ========== Others ========== */
+h3, h4 { margin-top: 0; }
+marquee { color: var(--brown); font-size: 14px; }
+

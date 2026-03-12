@@ -1,0 +1,18 @@
+<div class="app-container">
+  <header class="app-header">
+    <h1>{{ title }}</h1>
+    <nav class="app-nav">
+      <button (click)="showFashionList()" [class.active]="currentView === 'list'">Fashion List</button>
+      <button (click)="showFashionNew()" [class.active]="currentView === 'new'">Add Fashion</button>
+    </nav>
+  </header>
+
+  <main class="app-main">
+    <app-fashion *ngIf="currentView === 'list'"></app-fashion>
+    <app-fashion-new *ngIf="currentView === 'new'"></app-fashion-new>
+  </main>
+
+  <footer class="app-footer">
+    <p>&copy; 2024 Fashion Management System. All rights reserved.</p>
+  </footer>
+</div>
